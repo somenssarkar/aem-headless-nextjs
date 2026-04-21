@@ -1,0 +1,12 @@
+# MCP Configuration
+.mcp.json
+
+# Local Notes
+#AEM_Headless_Notes.md
+#Phase_3B_Plan.md
+
+# Claude Settings
+settings.local.json
+
+# Node Modules
+node_modules/
