@@ -1,0 +1,18 @@
+{
+  "faqList": {
+    "items": [
+      {
+        "_path": "/content/dam/kh/us/en/faqs/what-is-persisted-query",
+        "khQuestion": "What is a persisted query and why should I use it?",
+        "khAnswer": { "html": "<p>A persisted query is a GraphQL query saved on the AEM server and executed via HTTP GET. This makes it cacheable at CDN level — unlike POST-based queries which bypass the cache entirely.</p>" },
+        "khCategory": "AEM"
+      },
+      {
+        "_path": "/content/dam/kh/us/en/faqs/aem-graphql-vs-rest",
+        "khQuestion": "When should I use AEM GraphQL over the Content Services REST API?",
+        "khAnswer": { "html": "<p>Use GraphQL when your content model is developer-designed with complex relationships and you need multi-channel delivery. Use Content Services when marketers need to control the API shape via drag-and-drop components.</p>" },
+        "khCategory": "AEM"
+      }
+    ]
+  }
+}

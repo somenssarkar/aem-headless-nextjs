@@ -10,3 +10,6 @@ settings.local.json
 
 # Node Modules
 node_modules/
+.next/
+
+

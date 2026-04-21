@@ -1,0 +1,15 @@
+{
+  "tutorialList": {
+    "items": [
+      {
+        "_path": "/content/dam/kh/us/en/tutorials/aem-headless-setup",
+        "khSlug": "aem-headless-setup",
+        "khTitle": "AEM Headless Setup with Next.js",
+        "khDifficulty": "Beginner",
+        "khPrerequisites": "Node.js 18+, pnpm, AEM SDK running locally on port 4502",
+        "khSteps": [],
+        "khRelatedFAQs": []
+      }
+    ]
+  }
+}

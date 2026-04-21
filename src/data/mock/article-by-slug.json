@@ -1,0 +1,35 @@
+{
+  "articleList": {
+    "items": [
+      {
+        "_path": "/content/dam/kh/us/en/articles/getting-started-aem-graphql",
+        "khSlug": "getting-started-aem-graphql",
+        "khTitle": "Getting Started with AEM GraphQL",
+        "khCategory": "AEM",
+        "khDifficulty": "Beginner",
+        "khBody": {
+          "html": "<h2>Introduction</h2><p>AEM's GraphQL API lets you query Content Fragments using typed, schema-driven queries. Unlike REST, you request exactly the fields you need.</p><h2>Persisted Queries</h2><p>Always use persisted queries in production — they are executed via HTTP GET, making them fully cacheable at the CDN layer.</p>"
+        },
+        "khSummary": "A practical guide to querying Content Fragments using AEM's GraphQL API and persisted queries.",
+        "khPublishedDate": "2026-04-01T00:00:00.000Z",
+        "khTags": ["graphql", "content-fragments", "headless"],
+        "khSeoDescription": "Learn how to use AEM GraphQL API to query Content Fragments with persisted queries for headless delivery.",
+        "khAuthor": {
+          "khName": "Somen Sarkar",
+          "khBio": { "plaintext": "Senior AEM Architect with 10+ years of experience in Adobe Experience Cloud implementations." },
+          "khAvatar": { "_path": "/content/dam/kh/us/en/authors/avatar-somen.jpg" },
+          "khLinkedinUrl": "https://linkedin.com/in/somensarkar",
+          "khSpecialties": ["AEM", "GraphQL", "Headless CMS"]
+        },
+        "khRelatedFAQs": [
+          {
+            "_path": "/content/dam/kh/us/en/faqs/what-is-persisted-query",
+            "khQuestion": "What is a persisted query and why should I use it?",
+            "khAnswer": { "html": "<p>A persisted query is a GraphQL query saved on the AEM server and executed via HTTP GET. This makes it cacheable at CDN level — unlike POST-based queries which bypass the cache entirely.</p>" },
+            "khCategory": "AEM"
+          }
+        ]
+      }
+    ]
+  }
+}
