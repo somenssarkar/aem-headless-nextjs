@@ -2,6 +2,7 @@
 
 A headless content delivery prototype built with **Adobe Experience Manager (AEM) Content Fragments** and **Next.js 15 App Router**, deployed on Vercel.
 
+**[▶ Full Walkthrough Video (YouTube)](https://www.youtube.com/watch?v=_i5v-sK-o-U)** | **[Live Demo](https://aem-headless-nextjs.vercel.app)**
 
 ---
 
