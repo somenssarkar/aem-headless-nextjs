@@ -8,6 +8,11 @@
 # Claude Settings
 settings.local.json
 
+# Environment variables — never commit secrets
+.env
+.env.local
+.env.*.local
+
 # Node Modules
 node_modules/
 .next/
