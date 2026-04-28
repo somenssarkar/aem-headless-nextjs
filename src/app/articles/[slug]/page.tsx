@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { queryAEM } from '@/lib/aem-client';
 import { QUERIES } from '@/lib/queries';
@@ -6,6 +7,32 @@ import ArticleDetailComponent from '@/components/ArticleDetail';
 
 export const revalidate = 3600;
 export const dynamicParams = true;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const data = await queryAEM<ArticleBySlugResponse>(QUERIES.ARTICLE_BY_SLUG, { slug });
+  const article = data?.articleList?.items?.[0];
+
+  if (!article) return { title: 'Article Not Found | AEM Knowledge Hub' };
+
+  const description = article.khSeoDescription ?? article.khSummary;
+
+  return {
+    title: `${article.khTitle} | AEM Knowledge Hub`,
+    description,
+    openGraph: {
+      title: article.khTitle,
+      description,
+      type: 'article',
+      publishedTime: article.khPublishedDate,
+      tags: article.khTags,
+    },
+  };
+}
 
 export default async function ArticlePage({
   params,

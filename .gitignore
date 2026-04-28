@@ -17,4 +17,7 @@ settings.local.json
 node_modules/
 .next/
 
+# TypeScript incremental build cache
+*.tsbuildinfo
+
 
