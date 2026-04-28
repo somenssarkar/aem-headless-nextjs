@@ -108,10 +108,10 @@ ${stripHtml(bodyHtml).slice(0, 2000)}
 SEO Description (2 sentences, under 155 chars):`,
   });
   const seoDescription = text.trim();
-  const res = await fetch(`${AEM_BASE}/api/assets${cfPath}`, {
-    method: 'PATCH',
-    headers: { Authorization: AEM_AUTH, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ class: 'asset', properties: { khSeoDescription: seoDescription } }),
+  const res = await fetch(`${AEM_BASE}${cfPath}/jcr:content/data/master`, {
+    method: 'POST',
+    headers: { Authorization: AEM_AUTH, 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({ khSeoDescription: seoDescription }).toString(),
   });
   if (!res.ok) {
     console.warn(`  ⚠ AEM PATCH failed (${res.status}) — using generated value for this run`);

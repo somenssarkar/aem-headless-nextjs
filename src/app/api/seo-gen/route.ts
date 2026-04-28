@@ -24,21 +24,22 @@ SEO Description (2 sentences, under 155 chars):`,
 
   const khSeoDescription = text.trim();
 
-  // PATCH to AEM Author — Author-only setup, no Publish instance needed
-  const aemRes = await fetch(`${process.env.AEM_HOST}/api/assets${cfPath}`, {
-    method: 'PATCH',
-    headers: {
-      Authorization: process.env.AEM_AUTH!,
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      class: 'asset',
-      properties: { khSeoDescription },
-    }),
-  });
+  // Write to AEM Author via Sling POST Servlet — updates the CF data node directly.
+  // cfPath is the JCR path e.g. /content/dam/kh/us/en/articles/getting-started-aem-graphql
+  const aemRes = await fetch(
+    `${process.env.AEM_HOST}${cfPath}/jcr:content/data/master`,
+    {
+      method: 'POST',
+      headers: {
+        Authorization: process.env.AEM_AUTH!,
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: new URLSearchParams({ khSeoDescription }).toString(),
+    }
+  );
 
   if (!aemRes.ok) {
-    return Response.json({ error: `AEM PATCH failed: ${aemRes.status}` }, { status: 502 });
+    return Response.json({ error: `AEM write failed: ${aemRes.status}` }, { status: 502 });
   }
 
   return Response.json({ khSeoDescription, cfPath });
