@@ -2,7 +2,7 @@
 
 A headless content delivery and AI-powered knowledge retrieval system built with **Adobe Experience Manager (AEM) Content Fragments**, **Next.js 15 App Router**, and a **RAG pipeline** (Supabase pgvector + Google Gemini), deployed on Vercel.
 
-**[▶ Full Walkthrough Video (YouTube)](https://www.youtube.com/watch?v=_i5v-sK-o-U)** | **[Live Demo](https://aem-headless-nextjs.vercel.app)**
+**[▶ Part 1: AEM Headless Walkthrough (YouTube)](https://www.youtube.com/watch?v=_i5v-sK-o-U)** | **[▶ Part 2: RAG AI Assistant Demo (YouTube)](https://youtu.be/QuMy2E1jz7c)** | **[Live Demo](https://aem-headless-nextjs.vercel.app)**
 
 ---
 
