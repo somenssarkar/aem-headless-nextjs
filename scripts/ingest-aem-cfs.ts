@@ -235,20 +235,39 @@ async function ingestTutorials() {
 
 const EDS_BASE_URL = 'https://main--aem-eds-blog--somenssarkar.aem.live';
 
+type EdsPost = { path: string; title: string; description: string; lastModified: string };
+
+async function fetchEDSPosts(): Promise<EdsPost[]> {
+  // Primary: query-index.json (requires a published query-index spreadsheet in Drive root)
+  const idxRes = await fetch(`${EDS_BASE_URL}/query-index.json`);
+  if (idxRes.ok) {
+    const { data } = await idxRes.json() as { data: EdsPost[] };
+    return data.filter(p => /^\/blog\/.+/.test(p.path));
+  }
+
+  // Fallback: parse links from the blog index plain HTML
+  console.log('  → query-index.json not found, parsing blog index page');
+  const indexRes = await fetch(`${EDS_BASE_URL}/blog/index.plain.html`);
+  if (!indexRes.ok) {
+    console.warn(`  ⚠ Blog index plain HTML also unavailable (${indexRes.status}) — skipping`);
+    return [];
+  }
+  const html = await indexRes.text();
+  const seen = new Set<string>();
+  // Match both relative (/blog/slug) and absolute URLs (https://...vercel.app/blog/slug)
+  for (const m of html.matchAll(/href="(?:https?:\/\/[^"\/]+)?(\/blog\/[^/"?#\s]+)"/g)) seen.add(m[1]);
+  return [...seen].map(path => ({
+    path,
+    title: path.split('/').pop()!.replace(/-/g, ' '),
+    description: '',
+    lastModified: '',
+  }));
+}
+
 async function ingestEDSContent() {
   console.log('\nIngesting EDS Blog Posts...');
 
-  const idxRes = await fetch(`${EDS_BASE_URL}/query-index.json`);
-  if (!idxRes.ok) {
-    console.warn(`  ⚠ EDS query-index.json not available (${idxRes.status}) — skipping`);
-    return;
-  }
-
-  const { data: pages } = await idxRes.json() as {
-    data: Array<{ path: string; title: string; description: string; lastModified: string }>;
-  };
-
-  const blogPosts = pages.filter(p => /^\/blog\/.+/.test(p.path));
+  const blogPosts = await fetchEDSPosts();
   console.log(`  Found ${blogPosts.length} EDS blog post(s)`);
 
   const chunks: Chunk[] = [];

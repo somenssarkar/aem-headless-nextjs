@@ -15,6 +15,12 @@ export function ChatWidget() {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages]);
 
+  useEffect(() => {
+    if (window.parent !== window) {
+      window.parent.postMessage({ type: 'chat-toggle', open }, '*');
+    }
+  }, [open]);
+
   function handleSubmit(e?: React.FormEvent) {
     e?.preventDefault();
     const text = input.trim();
