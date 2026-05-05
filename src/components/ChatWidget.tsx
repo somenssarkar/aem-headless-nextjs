@@ -29,7 +29,7 @@ export function ChatWidget() {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div data-chat-widget className="fixed bottom-6 right-6 z-50">
       {open ? (
         <div className="w-96 h-[520px] bg-white border border-slate-200 rounded-2xl shadow-2xl flex flex-col overflow-hidden">
           {/* Header */}

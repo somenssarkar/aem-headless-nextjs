@@ -233,12 +233,66 @@ async function ingestTutorials() {
   await embedAndUpsert(chunks);
 }
 
+const EDS_BASE_URL = 'https://main--aem-eds-blog--somenssarkar.aem.live';
+
+async function ingestEDSContent() {
+  console.log('\nIngesting EDS Blog Posts...');
+
+  const idxRes = await fetch(`${EDS_BASE_URL}/query-index.json`);
+  if (!idxRes.ok) {
+    console.warn(`  ⚠ EDS query-index.json not available (${idxRes.status}) — skipping`);
+    return;
+  }
+
+  const { data: pages } = await idxRes.json() as {
+    data: Array<{ path: string; title: string; description: string; lastModified: string }>;
+  };
+
+  const blogPosts = pages.filter(p => /^\/blog\/.+/.test(p.path));
+  console.log(`  Found ${blogPosts.length} EDS blog post(s)`);
+
+  const chunks: Chunk[] = [];
+
+  for (const post of blogPosts) {
+    if (since && post.lastModified) {
+      // EDS lastModified is a Unix timestamp (seconds)
+      if (Number(post.lastModified) * 1000 < new Date(since).getTime()) continue;
+    }
+
+    const plainRes = await fetch(`${EDS_BASE_URL}${post.path}.plain.html`);
+    const bodyText = plainRes.ok ? stripHtml(await plainRes.text()) : '';
+
+    const meta = { title: post.title, path: post.path, source: 'eds' };
+
+    chunks.push({
+      path: `eds:${post.path}#summary`,
+      model: 'EDS_BlogPost',
+      chunk_type: 'title_summary',
+      content: `${post.title}\n${post.description}`,
+      metadata: meta,
+    });
+
+    if (bodyText) {
+      chunks.push({
+        path: `eds:${post.path}#body`,
+        model: 'EDS_BlogPost',
+        chunk_type: 'body',
+        content: bodyText,
+        metadata: meta,
+      });
+    }
+  }
+
+  await embedAndUpsert(chunks);
+}
+
 async function main() {
   console.log(`AEM CF Ingestion — ${since ? `incremental since ${since}` : 'full sync'}`);
   const authorMap = await ingestArticles();
   await ingestFAQs();
   await ingestTutorials();
   await ingestAuthorProfiles(authorMap);
+  await ingestEDSContent();
   const { count } = await supabase.from('cf_embeddings').select('*', { count: 'exact', head: true });
   console.log(`\nDone. Total chunks in pgvector: ${count}`);
 }
