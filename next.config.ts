@@ -15,6 +15,8 @@ const nextConfig: NextConfig = {
         { source: '/blocks/:path*',  destination: `${EDS_BASE}/blocks/:path*` },
         { source: '/fonts/:path*',   destination: `${EDS_BASE}/fonts/:path*` },
         { source: '/icons/:path*',   destination: `${EDS_BASE}/icons/:path*` },
+        { source: '/nav.plain.html',    destination: `${EDS_BASE}/nav.plain.html` },
+        { source: '/footer.plain.html', destination: `${EDS_BASE}/footer.plain.html` },
       ],
       afterFiles: [],
       fallback: [],
