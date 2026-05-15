@@ -1,0 +1,59 @@
+services:
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wp
+      MYSQL_PASSWORD: wp
+    volumes:
+      - wp-db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "wp", "-pwp"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  wordpress:
+    image: wordpress:latest
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wp
+      WORDPRESS_DB_PASSWORD: wp
+    volumes:
+      - wp-files:/var/www/html
+
+  # WP-CLI service — profile:seed keeps it out of the default `up -d`.
+  # Usage after completing the browser installer + plugin installs:
+  #   docker compose --profile seed run --rm wp-cli
+  wp-cli:
+    image: wordpress:cli
+    restart: "no"
+    profiles: [seed]
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: wp
+      WORDPRESS_DB_PASSWORD: wp
+    volumes:
+      - wp-files:/var/www/html
+      - ./seed-posts.php:/seed-posts.php:ro
+    command: >
+      sh -c "
+        wp eval-file /seed-posts.php --allow-root
+      "
+
+volumes:
+  wp-db:
+  wp-files:

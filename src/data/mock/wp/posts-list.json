@@ -1,0 +1,94 @@
+{
+  "posts": {
+    "nodes": [
+      {
+        "id": "cG9zdDox",
+        "slug": "content-fragments-vs-experience-fragments-when-to-use-which-in-aem",
+        "title": "Content Fragments vs Experience Fragments: When to Use Which in AEM",
+        "excerpt": "<p>One of the most common questions I get from AEM developers: should I use a Content Fragment or an Experience Fragment? The answer depends entirely on whether you&#8217;re building for headless delivery or reuse within AEM Sites.</p>",
+        "date": "2026-05-14T10:00:00",
+        "categories": { "nodes": [{ "name": "AEM", "slug": "aem" }] },
+        "tags": { "nodes": [{ "name": "Content Fragments", "slug": "content-fragments" }, { "name": "Experience Fragments", "slug": "experience-fragments" }, { "name": "AEM Headless", "slug": "aem-headless" }] },
+        "author": { "node": { "name": "Somen Sarkar", "avatar": { "url": "" } } },
+        "featuredImage": null
+      },
+      {
+        "id": "cG9zdDoy",
+        "slug": "aem-headless-graphql-writing-your-first-persisted-query",
+        "title": "AEM Headless GraphQL: Writing Your First Persisted Query",
+        "excerpt": "<p>AEM&#8217;s headless GraphQL implementation uses persisted queries — named, CDN-cacheable endpoints stored in the JCR. This guide walks through writing, testing, and deploying your first persisted query end-to-end.</p>",
+        "date": "2026-05-13T10:00:00",
+        "categories": { "nodes": [{ "name": "AEM", "slug": "aem" }] },
+        "tags": { "nodes": [{ "name": "GraphQL", "slug": "graphql" }, { "name": "Persisted Queries", "slug": "persisted-queries" }, { "name": "AEM Headless", "slug": "aem-headless" }] },
+        "author": { "node": { "name": "Somen Sarkar", "avatar": { "url": "" } } },
+        "featuredImage": null
+      },
+      {
+        "id": "cG9zdDoz",
+        "slug": "headless-cms-architecture-in-2026-aem-wordpress-or-drupal",
+        "title": "Headless CMS Architecture in 2026: AEM, WordPress, or Drupal?",
+        "excerpt": "<p>A client asked me: we have 3,000 WordPress posts and want to add an AI assistant. Do we migrate to AEM or stay on WordPress? The answer exposed architectural trade-offs that come up constantly in the headless CMS landscape.</p>",
+        "date": "2026-05-12T10:00:00",
+        "categories": { "nodes": [{ "name": "Architecture", "slug": "architecture" }] },
+        "tags": { "nodes": [{ "name": "Headless CMS", "slug": "headless-cms" }, { "name": "Architecture", "slug": "architecture" }, { "name": "WordPress", "slug": "wordpress" }] },
+        "author": { "node": { "name": "Somen Sarkar", "avatar": { "url": "" } } },
+        "featuredImage": null
+      },
+      {
+        "id": "cG9zdDo0",
+        "slug": "wpgraphql-vs-aem-graphql-a-developers-side-by-side",
+        "title": "WPGraphQL vs AEM GraphQL: A Developer's Side-by-Side",
+        "excerpt": "<p>Both AEM and WordPress support GraphQL as their headless query layer, but they take fundamentally different approaches. Having built production integrations with both, here is the comparison that matters for a Next.js front-end team.</p>",
+        "date": "2026-05-11T10:00:00",
+        "categories": { "nodes": [{ "name": "Architecture", "slug": "architecture" }] },
+        "tags": { "nodes": [{ "name": "WPGraphQL", "slug": "wpgraphql" }, { "name": "GraphQL", "slug": "graphql" }, { "name": "AEM", "slug": "aem" }] },
+        "author": { "node": { "name": "Somen Sarkar", "avatar": { "url": "" } } },
+        "featuredImage": null
+      },
+      {
+        "id": "cG9zdDo1",
+        "slug": "the-source-adapter-pattern-building-cms-agnostic-ai-ingestion-pipelines",
+        "title": "The Source Adapter Pattern: Building CMS-Agnostic AI Ingestion Pipelines",
+        "excerpt": "<p>When I extended our AEM knowledge hub to include WordPress and Drupal content, the naive approach was three separate ingestion scripts. The better approach was an abstraction that makes adding a fourth CMS a 60-line exercise.</p>",
+        "date": "2026-05-10T10:00:00",
+        "categories": { "nodes": [{ "name": "Architecture", "slug": "architecture" }] },
+        "tags": { "nodes": [{ "name": "AI", "slug": "ai" }, { "name": "RAG", "slug": "rag" }, { "name": "Design Patterns", "slug": "design-patterns" }] },
+        "author": { "node": { "name": "Somen Sarkar", "avatar": { "url": "" } } },
+        "featuredImage": null
+      },
+      {
+        "id": "cG9zdDo2",
+        "slug": "docker-first-aem-development-a-setup-that-actually-works-on-windows",
+        "title": "Docker-First AEM Development: A Setup That Actually Works on Windows",
+        "excerpt": "<p>Setting up AEM locally on Windows has historically meant fighting with JDK versions and heap allocation flags. Running WordPress and Drupal alongside AEM makes it harder. Here is the hybrid Docker approach that works in practice.</p>",
+        "date": "2026-05-09T10:00:00",
+        "categories": { "nodes": [{ "name": "DevOps", "slug": "devops" }] },
+        "tags": { "nodes": [{ "name": "Docker", "slug": "docker" }, { "name": "AEM", "slug": "aem" }, { "name": "Local Development", "slug": "local-development" }] },
+        "author": { "node": { "name": "Somen Sarkar", "avatar": { "url": "" } } },
+        "featuredImage": null
+      },
+      {
+        "id": "cG9zdDo3",
+        "slug": "aem-content-fragment-models-designing-for-headless-and-rag-ingestion",
+        "title": "AEM Content Fragment Models: Designing for Headless and RAG Ingestion",
+        "excerpt": "<p>Designing a CF model that works well for both headless delivery and AI ingestion requires thinking about field granularity, slug uniqueness, and how chunks will be embedded. Here is what I learned building the Knowledge Hub.</p>",
+        "date": "2026-05-08T10:00:00",
+        "categories": { "nodes": [{ "name": "AEM", "slug": "aem" }] },
+        "tags": { "nodes": [{ "name": "Content Fragment Models", "slug": "content-fragment-models" }, { "name": "RAG", "slug": "rag" }, { "name": "AI", "slug": "ai" }] },
+        "author": { "node": { "name": "Somen Sarkar", "avatar": { "url": "" } } },
+        "featuredImage": null
+      },
+      {
+        "id": "cG9zdDo4",
+        "slug": "connecting-aem-content-fragments-to-adobe-experience-platform-for-personalization",
+        "title": "Connecting AEM Content Fragments to Adobe Experience Platform for Personalization",
+        "excerpt": "<p>AEM Content Fragments and Adobe Experience Platform solve complementary problems: AEM structures and delivers content, AEP structures and activates customer data. The integration point is personalization.</p>",
+        "date": "2026-05-07T10:00:00",
+        "categories": { "nodes": [{ "name": "AEP", "slug": "aep" }] },
+        "tags": { "nodes": [{ "name": "AEP", "slug": "aep" }, { "name": "Personalization", "slug": "personalization" }, { "name": "Real-time CDP", "slug": "real-time-cdp" }] },
+        "author": { "node": { "name": "Somen Sarkar", "avatar": { "url": "" } } },
+        "featuredImage": null
+      }
+    ]
+  }
+}
