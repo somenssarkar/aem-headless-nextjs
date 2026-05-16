@@ -3,6 +3,8 @@ import type { NextConfig } from "next";
 const EDS_BASE = 'https://main--aem-eds-blog--somenssarkar.aem.live';
 
 const nextConfig: NextConfig = {
+  // Suppress the Next.js dev tools badge — it collides with the chat button inside the 80×80 iframe
+  devIndicators: false,
   async rewrites() {
     return {
       // beforeFiles runs before Next.js checks its own app/pages routes,
