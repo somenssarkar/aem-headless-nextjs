@@ -14,6 +14,7 @@ import type { SourceAdapter, Chunk } from '../src/lib/ingestion/source-adapter';
 import { createAemAdapter } from '../src/lib/ingestion/aem-adapter';
 import { createEdsAdapter } from '../src/lib/ingestion/eds-adapter';
 import { wordpressAdapter } from '../src/lib/ingestion/wordpress-adapter';
+import { drupalAdapter } from '../src/lib/ingestion/drupal-adapter';
 import { embedAndUpsert } from '../src/lib/ingestion/embed-upsert';
 import { createClient } from '@supabase/supabase-js';
 
@@ -24,7 +25,7 @@ const allAdapters: SourceAdapter[] = [
   createAemAdapter(since),
   createEdsAdapter(since),
   wordpressAdapter,
-  // drupal adapter will be registered here in Track 3
+  drupalAdapter,
 ];
 
 const adapters = sourceFilter

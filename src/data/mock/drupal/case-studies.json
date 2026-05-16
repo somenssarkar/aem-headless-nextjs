@@ -1,0 +1,112 @@
+{
+  "data": [
+    {
+      "type": "node--case_study",
+      "id": "cs-001",
+      "attributes": {
+        "drupal_internal__nid": 1,
+        "title": "AEM Content Fragments for E-Commerce Personalization",
+        "field_summary": "How a global fashion retailer unified product content across 12 markets using AEM Content Fragments and AEP segmentation.",
+        "body": {
+          "value": "<p>A global fashion retailer operating across 12 markets faced a content fragmentation problem. Each regional team maintained separate product descriptions, campaign copy, and landing page content — 40,000 assets spread across six different DAM systems. The solution: migrate all structured content to AEM Content Fragments with a standardized Product, Campaign, and Landing Page model.</p><p>The JCR structure used locale-specific variations under each content fragment, allowing regional editors to override field values without duplicating the parent fragment. The GraphQL delivery layer exposed content through persisted queries, consumed by a Next.js storefront running on Vercel.</p><p>AEP Real-time Customer Profile enriched the delivery layer: user segment data from AEP fed into the Next.js middleware, which selected the appropriate content fragment variation based on the visitor's loyalty tier and browsing history. High-value segments received premium product descriptions with lifestyle imagery; new visitors received introductory content with social proof.</p><p>The result was a 40% reduction in time-to-market for new campaigns and a 23% lift in conversion rate for personalized landing pages compared to the generic fallback. Content editors reduced duplication effort by 70% — a single update to a shared fragment propagated instantly across all 12 market storefronts.</p>",
+          "processed": "<p>A global fashion retailer operating across 12 markets faced a content fragmentation problem. Each regional team maintained separate product descriptions, campaign copy, and landing page content — 40,000 assets spread across six different DAM systems. The solution: migrate all structured content to AEM Content Fragments with a standardized Product, Campaign, and Landing Page model.</p><p>The JCR structure used locale-specific variations under each content fragment, allowing regional editors to override field values without duplicating the parent fragment. The GraphQL delivery layer exposed content through persisted queries, consumed by a Next.js storefront running on Vercel.</p><p>AEP Real-time Customer Profile enriched the delivery layer: user segment data from AEP fed into the Next.js middleware, which selected the appropriate content fragment variation based on the visitor's loyalty tier and browsing history. High-value segments received premium product descriptions with lifestyle imagery; new visitors received introductory content with social proof.</p><p>The result was a 40% reduction in time-to-market for new campaigns and a 23% lift in conversion rate for personalized landing pages compared to the generic fallback. Content editors reduced duplication effort by 70% — a single update to a shared fragment propagated instantly across all 12 market storefronts.</p>",
+          "summary": null
+        },
+        "created": "2026-02-10T09:00:00+00:00",
+        "changed": "2026-03-15T10:00:00+00:00",
+        "path": { "alias": null, "pid": null, "langcode": "en" }
+      },
+      "relationships": {
+        "field_industry": { "data": { "type": "taxonomy_term--industry", "id": "ind-001" } }
+      }
+    },
+    {
+      "type": "node--case_study",
+      "id": "cs-002",
+      "attributes": {
+        "drupal_internal__nid": 2,
+        "title": "Migrating from Sitecore to AEM Headless: A Financial Services Case Study",
+        "field_summary": "A tier-one investment bank cut time-to-market by 85% after migrating 180,000 content items from Sitecore XP to AEM as a Cloud Service.",
+        "body": {
+          "value": "<p>A tier-one investment bank running Sitecore XP 9.3 hit a wall: the .NET-only development model locked out their JavaScript-first engineering teams, and the Sitecore license renewal cost exceeded $2M annually. The migration to AEM as a Cloud Service with headless Next.js delivery took 14 months across three phases.</p><p>Phase 1 was content model mapping. Sitecore templates were reverse-engineered into AEM Content Fragment models — 47 template types collapsed to 11 CF models through strategic deduplication. The key insight was that Sitecore's rendering-specific templates encoded both content and layout; the AEM migration separated these concerns, producing leaner CF models with a clean separation between content (in AEM) and presentation (in Next.js).</p><p>Phase 2 was content migration using the AEM Assets HTTP API for bulk import. 180,000 content items migrated with zero manual re-entry using a custom Node.js ETL pipeline that fetched from Sitecore's Content Delivery API and posted to AEM's GraphQL mutation endpoints. Validation ran automatically: each migrated CF was compared against the source Sitecore item using a diff tool that flagged rich text formatting discrepancies.</p><p>Phase 3 was the front-end rebuild. The Next.js delivery layer consumed AEM GraphQL persisted queries. ISR with a 3600-second revalidation window handled compliance-sensitive pages — the legal team required that content changes appear within 1 hour of publication. Time-to-market dropped from 6 weeks to 4 days for standard product page updates.</p>",
+          "processed": "<p>A tier-one investment bank running Sitecore XP 9.3 hit a wall: the .NET-only development model locked out their JavaScript-first engineering teams, and the Sitecore license renewal cost exceeded $2M annually. The migration to AEM as a Cloud Service with headless Next.js delivery took 14 months across three phases.</p><p>Phase 1 was content model mapping. Sitecore templates were reverse-engineered into AEM Content Fragment models — 47 template types collapsed to 11 CF models through strategic deduplication. The key insight was that Sitecore's rendering-specific templates encoded both content and layout; the AEM migration separated these concerns, producing leaner CF models with a clean separation between content (in AEM) and presentation (in Next.js).</p><p>Phase 2 was content migration using the AEM Assets HTTP API for bulk import. 180,000 content items migrated with zero manual re-entry using a custom Node.js ETL pipeline that fetched from Sitecore's Content Delivery API and posted to AEM's GraphQL mutation endpoints. Validation ran automatically: each migrated CF was compared against the source Sitecore item using a diff tool that flagged rich text formatting discrepancies.</p><p>Phase 3 was the front-end rebuild. The Next.js delivery layer consumed AEM GraphQL persisted queries. ISR with a 3600-second revalidation window handled compliance-sensitive pages — the legal team required that content changes appear within 1 hour of publication. Time-to-market dropped from 6 weeks to 4 days for standard product page updates.</p>",
+          "summary": null
+        },
+        "created": "2026-02-18T11:00:00+00:00",
+        "changed": "2026-03-20T14:00:00+00:00",
+        "path": { "alias": null, "pid": null, "langcode": "en" }
+      },
+      "relationships": {
+        "field_industry": { "data": { "type": "taxonomy_term--industry", "id": "ind-002" } }
+      }
+    },
+    {
+      "type": "node--case_study",
+      "id": "cs-003",
+      "attributes": {
+        "drupal_internal__nid": 3,
+        "title": "WordPress to AEM: Healthcare Content Migration Across 8 Hospital Sites",
+        "field_summary": "How a regional hospital network consolidated eight WordPress sites into a single AEM Content Fragment repository, improving clinical content accuracy from 61% to 94%.",
+        "body": {
+          "value": "<p>A regional hospital network operated eight separate WordPress sites — one per hospital — each managed by a different marketing coordinator with no shared taxonomy or brand standards. Content duplication was rampant: the same clinical service descriptions were maintained eight times, with diverging accuracy over time. A compliance audit found that 39% of clinical service pages contained outdated information that conflicted with the current clinical standards database.</p><p>The solution consolidated all content into a single AEM instance with three content fragment models: Hospital (location, contact, accreditations), Department (name, head, services offered), and Clinical Service (name, description, medical_reviewer, last_reviewed_date). The Clinical Service model included a required medical_reviewer field (author reference to the Author CF model), enforcing review workflows before publication. No clinical service page could be published without a named medical reviewer.</p><p>WordPress content was migrated using a custom PHP export script that converted Gutenberg blocks to structured CF fields. The WPGraphQL API extracted all post content programmatically — the same WPGraphQL query pattern later used in the AEM Knowledge Hub's WordPress adapter. HTML from Gutenberg was stripped to plain text, then re-entered into the structured CF fields by the clinical content team over a 6-week period.</p><p>Post-migration: content accuracy scores improved from 61% to 94% (measured against the clinical standards database over a 90-day period). A single editor update to a shared Clinical Service CF propagated instantly across all eight hospital frontends via the shared GraphQL delivery layer. The hospital network eliminated 7 of 8 marketing coordinator roles managing duplicate content.</p>",
+          "processed": "<p>A regional hospital network operated eight separate WordPress sites — one per hospital — each managed by a different marketing coordinator with no shared taxonomy or brand standards. Content duplication was rampant: the same clinical service descriptions were maintained eight times, with diverging accuracy over time. A compliance audit found that 39% of clinical service pages contained outdated information that conflicted with the current clinical standards database.</p><p>The solution consolidated all content into a single AEM instance with three content fragment models: Hospital (location, contact, accreditations), Department (name, head, services offered), and Clinical Service (name, description, medical_reviewer, last_reviewed_date). The Clinical Service model included a required medical_reviewer field (author reference to the Author CF model), enforcing review workflows before publication. No clinical service page could be published without a named medical reviewer.</p><p>WordPress content was migrated using a custom PHP export script that converted Gutenberg blocks to structured CF fields. The WPGraphQL API extracted all post content programmatically — the same WPGraphQL query pattern later used in the AEM Knowledge Hub's WordPress adapter. HTML from Gutenberg was stripped to plain text, then re-entered into the structured CF fields by the clinical content team over a 6-week period.</p><p>Post-migration: content accuracy scores improved from 61% to 94% (measured against the clinical standards database over a 90-day period). A single editor update to a shared Clinical Service CF propagated instantly across all eight hospital frontends via the shared GraphQL delivery layer. The hospital network eliminated 7 of 8 marketing coordinator roles managing duplicate content.</p>",
+          "summary": null
+        },
+        "created": "2026-03-01T08:00:00+00:00",
+        "changed": "2026-03-25T09:00:00+00:00",
+        "path": { "alias": null, "pid": null, "langcode": "en" }
+      },
+      "relationships": {
+        "field_industry": { "data": { "type": "taxonomy_term--industry", "id": "ind-003" } }
+      }
+    },
+    {
+      "type": "node--case_study",
+      "id": "cs-004",
+      "attributes": {
+        "drupal_internal__nid": 4,
+        "title": "Drupal JSON:API + Next.js for a Global News Publisher",
+        "field_summary": "A media company replaced a monolithic Drupal 7 site serving 12 million monthly visitors with a headless Drupal 11 + Next.js architecture, cutting load time from 4.2s to 0.8s.",
+        "body": {
+          "value": "<p>A global news publisher running Drupal 7 faced end-of-life on their monolithic architecture. The site served 12 million monthly visitors across 40 editorial verticals, with a publishing workflow involving 300 journalists. Drupal 7 reached end-of-life in January 2025; the publisher needed to migrate before security support ended.</p><p>The move to Drupal 11 headless with JSON:API as the delivery layer preserved the editorial workflow (Drupal's built-in content moderation module with Draft, In Review, and Published states) while replacing the Twig-based frontend with a Next.js application delivered via Vercel's CDN. The key architectural decision: keep Drupal as the editorial backend (its workflow capabilities are unmatched) and treat it purely as a headless content API.</p><p>The JSON:API endpoint structure exposed Article, Gallery, Video, and Author content types. Each Article response included the author relationship resolved via the JSON:API include parameter — a single GET request returned the article and its author in one response, eliminating the N+1 query problem that had plagued the Drupal 7 Views-based REST API. The included array pattern required a client-side lookup map to resolve relationships, but the trade-off was a 60% reduction in total API requests per page load.</p><p>The Next.js delivery layer used ISR with 60-second revalidation for breaking news articles and 24-hour revalidation for evergreen content. A webhook from Drupal's content moderation transition triggered on-demand ISR revalidation for high-priority articles, bypassing the 60-second window when editors marked articles as breaking news. Page load time dropped from 4.2 seconds to 0.8 seconds. Core Web Vitals improved across all three metrics: LCP from 5.1s to 1.2s, CLS from 0.28 to 0.04, INP from 340ms to 80ms.</p>",
+          "processed": "<p>A global news publisher running Drupal 7 faced end-of-life on their monolithic architecture. The site served 12 million monthly visitors across 40 editorial verticals, with a publishing workflow involving 300 journalists. Drupal 7 reached end-of-life in January 2025; the publisher needed to migrate before security support ended.</p><p>The move to Drupal 11 headless with JSON:API as the delivery layer preserved the editorial workflow (Drupal's built-in content moderation module with Draft, In Review, and Published states) while replacing the Twig-based frontend with a Next.js application delivered via Vercel's CDN. The key architectural decision: keep Drupal as the editorial backend (its workflow capabilities are unmatched) and treat it purely as a headless content API.</p><p>The JSON:API endpoint structure exposed Article, Gallery, Video, and Author content types. Each Article response included the author relationship resolved via the JSON:API include parameter — a single GET request returned the article and its author in one response, eliminating the N+1 query problem that had plagued the Drupal 7 Views-based REST API. The included array pattern required a client-side lookup map to resolve relationships, but the trade-off was a 60% reduction in total API requests per page load.</p><p>The Next.js delivery layer used ISR with 60-second revalidation for breaking news articles and 24-hour revalidation for evergreen content. A webhook from Drupal's content moderation transition triggered on-demand ISR revalidation for high-priority articles, bypassing the 60-second window when editors marked articles as breaking news. Page load time dropped from 4.2 seconds to 0.8 seconds. Core Web Vitals improved across all three metrics: LCP from 5.1s to 1.2s, CLS from 0.28 to 0.04, INP from 340ms to 80ms.</p>",
+          "summary": null
+        },
+        "created": "2026-03-10T13:00:00+00:00",
+        "changed": "2026-04-01T15:00:00+00:00",
+        "path": { "alias": null, "pid": null, "langcode": "en" }
+      },
+      "relationships": {
+        "field_industry": { "data": { "type": "taxonomy_term--industry", "id": "ind-004" } }
+      }
+    },
+    {
+      "type": "node--case_study",
+      "id": "cs-005",
+      "attributes": {
+        "drupal_internal__nid": 5,
+        "title": "RAG-Powered AI Assistant Built on AEM Content Fragments and Gemini",
+        "field_summary": "A B2B software company indexed 2,400 AEM Content Fragments into pgvector and built a Gemini-powered RAG assistant, achieving 34% better retrieval accuracy with structured dual-chunk indexing.",
+        "body": {
+          "value": "<p>A B2B software company used AEM Content Fragments as the authoritative source for their product documentation, technical FAQs, and API reference guides. The content team maintained 2,400 CFs across Article, FAQ, TutorialStep, and Author models — the same models used in the AEM Knowledge Hub. The challenge: support engineers were spending 40% of their time answering questions already answered in the documentation.</p><p>The solution: index all 2,400 CFs into a Supabase pgvector store using the Gemini embedding-001 model (768 dimensions, taskType RETRIEVAL_DOCUMENT). The ingestion pipeline chunked each CF body into 800-character windows with 100-character overlap, preserving semantic coherence at section boundaries. A separate title+summary chunk was generated for each CF, combining the title and excerpt fields — this dual-chunk approach ensured that both the semantic meaning of the title and the full body content were independently retrievable.</p><p>The retrieval layer used cosine similarity search against the pgvector store via a Supabase RPC function (match_cf_chunks). Each user query was embedded with taskType RETRIEVAL_QUERY (a different embedding mode from RETRIEVAL_DOCUMENT, important for asymmetric retrieval accuracy) before the similarity search. The top-5 most relevant chunks were assembled into a grounded context prompt sent to Gemini Flash, which was instructed to answer only from the provided context and always cite the source article.</p><p>Key finding: content fragments with consistent, structured metadata (title, summary, author, tags) produced 34% more accurate retrieval results compared to unstructured long-form body chunks alone. This validated the dual-chunk indexing architecture — index both a summary representation and the full body, and the similarity search can match on either the high-level topic (via summary chunk) or the specific detail (via body chunk). The assistant was embedded on the documentation portal via a drop-in iframe widget, reducing support ticket volume by 28% in the first 90 days.</p>",
+          "processed": "<p>A B2B software company used AEM Content Fragments as the authoritative source for their product documentation, technical FAQs, and API reference guides. The content team maintained 2,400 CFs across Article, FAQ, TutorialStep, and Author models — the same models used in the AEM Knowledge Hub. The challenge: support engineers were spending 40% of their time answering questions already answered in the documentation.</p><p>The solution: index all 2,400 CFs into a Supabase pgvector store using the Gemini embedding-001 model (768 dimensions, taskType RETRIEVAL_DOCUMENT). The ingestion pipeline chunked each CF body into 800-character windows with 100-character overlap, preserving semantic coherence at section boundaries. A separate title+summary chunk was generated for each CF, combining the title and excerpt fields — this dual-chunk approach ensured that both the semantic meaning of the title and the full body content were independently retrievable.</p><p>The retrieval layer used cosine similarity search against the pgvector store via a Supabase RPC function (match_cf_chunks). Each user query was embedded with taskType RETRIEVAL_QUERY (a different embedding mode from RETRIEVAL_DOCUMENT, important for asymmetric retrieval accuracy) before the similarity search. The top-5 most relevant chunks were assembled into a grounded context prompt sent to Gemini Flash, which was instructed to answer only from the provided context and always cite the source article.</p><p>Key finding: content fragments with consistent, structured metadata (title, summary, author, tags) produced 34% more accurate retrieval results compared to unstructured long-form body chunks alone. This validated the dual-chunk indexing architecture — index both a summary representation and the full body, and the similarity search can match on either the high-level topic (via summary chunk) or the specific detail (via body chunk). The assistant was embedded on the documentation portal via a drop-in iframe widget, reducing support ticket volume by 28% in the first 90 days.</p>",
+          "summary": null
+        },
+        "created": "2026-03-20T10:00:00+00:00",
+        "changed": "2026-04-10T11:00:00+00:00",
+        "path": { "alias": null, "pid": null, "langcode": "en" }
+      },
+      "relationships": {
+        "field_industry": { "data": { "type": "taxonomy_term--industry", "id": "ind-005" } }
+      }
+    }
+  ],
+  "included": [
+    { "type": "taxonomy_term--industry", "id": "ind-001", "attributes": { "name": "Retail" } },
+    { "type": "taxonomy_term--industry", "id": "ind-002", "attributes": { "name": "Finance" } },
+    { "type": "taxonomy_term--industry", "id": "ind-003", "attributes": { "name": "Healthcare" } },
+    { "type": "taxonomy_term--industry", "id": "ind-004", "attributes": { "name": "Media" } },
+    { "type": "taxonomy_term--industry", "id": "ind-005", "attributes": { "name": "Technology" } }
+  ],
+  "links": {}
+}

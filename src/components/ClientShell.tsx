@@ -22,6 +22,7 @@ export function ClientShell({ children }: { children: React.ReactNode }) {
           <Link href="/tutorials" className="text-sm text-gray-600 hover:text-blue-700">Tutorials</Link>
           <Link href="/blog" className="text-sm text-gray-600 hover:text-blue-700">Blog</Link>
           <Link href="/wp" className="text-sm text-gray-600 hover:text-amber-600">WordPress</Link>
+          <Link href="/drupal" className="text-sm text-gray-600 hover:text-indigo-700">Drupal</Link>
           <Link href="/embed" className="text-sm text-gray-600 hover:text-blue-700 ml-auto">Embed Widget</Link>
         </nav>
       </header>
