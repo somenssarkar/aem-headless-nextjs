@@ -40,7 +40,14 @@ function SourceBadges({ text }: { text: string }) {
   );
 }
 
-export function ChatWidget() {
+const SOURCE_SUBTITLE: Record<string, string> = {
+  'wordpress': 'WordPress · Gemini',
+  'drupal':    'Drupal · Gemini',
+  'aem-cf':   'AEM CF · Gemini',
+  'eds':       'AEM EDS · Gemini',
+};
+
+export function ChatWidget({ source, tenant: _tenant }: { source?: string; tenant?: string } = {}) {
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState('');
   const bottomRef = useRef<HTMLDivElement>(null);
@@ -79,7 +86,9 @@ export function ChatWidget() {
           <div className="flex items-center justify-between px-4 py-3 bg-slate-900">
             <div>
               <p className="text-white font-semibold text-sm">AEM Knowledge Assistant</p>
-              <p className="text-slate-400 text-xs">AEM CF · EDS · WordPress · Drupal · Gemini</p>
+              <p className="text-slate-400 text-xs">
+                {(source && SOURCE_SUBTITLE[source]) ?? 'AEM CF · EDS · WordPress · Drupal · Gemini'}
+              </p>
             </div>
             <button
               onClick={() => setOpen(false)}
